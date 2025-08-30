@@ -30,4 +30,20 @@ router.get('/viewbyid/:id',(req,res)=>{
     })
 })
 
+router.post('/updatenote',upload.none(),(req,res)=>{
+    const {id,title,content}=req.body
+    Note.update(id,title,content,(err,data)=>{
+        if(err) console.log(err)
+        res.json({status:"ok"})
+    })
+})
+
+router.post('/deletetask',(req,res)=>{
+    const {id}=req.body
+    Note.delete(id,(err,data)=>{
+        if(err) console.log(err)
+            res.json({status:"ok"})
+    })
+})
+
 module.exports=router
