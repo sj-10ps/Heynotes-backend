@@ -8,6 +8,7 @@
     "sqlite3": "^5.1.7"
   },
     "scripts": {
-    "start": "node main.js"
+    "start": "node main.js",
+     "postinstall": "npm rebuild sqlite3 --build-from-source"
   }
 }

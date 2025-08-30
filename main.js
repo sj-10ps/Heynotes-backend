@@ -11,6 +11,6 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.use('',functionsroute)
 
-app.listen(process.env.PORT,()=>{
+app.listen(process.env.PORT||4000,()=>{
    console.log(`app running on http://localhost:${process.env.PORT}`)
 })
